@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ISKOLAR LINK scholarship management system">
+    <title>ISKOLAR LINK | Scholarship Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <main id="main-content">
+        <section id="login-view" class="login-view" aria-labelledby="login-title">
+            <div class="login-art" aria-hidden="true">
+                <div class="art-grid"></div>
+                <div class="art-content">
+                    <div class="brand-mark large"><span>IL</span></div>
+                    <p class="eyebrow light">Scholarship Management Portal</p>
+                    <h1>Empowering every learner's next opportunity.</h1>
+                    <div class="art-stat"><strong>25+</strong><span>Scholarship programs</span></div>
+                </div>
+            </div>
+
+            <div class="login-panel">
+                <div class="mobile-brand">
+                    <div class="brand-mark"><span>IL</span></div><strong>ISKOLAR LINK</strong>
+                </div>
+                <form id="login-form" class="login-card" novalidate>
+                    <p class="eyebrow">Welcome back</p>
+                    <h2 id="login-title">Sign in to your account</h2>
+                    <p class="muted">Access scholarships, applications, and updates.</p>
+
+                    <fieldset class="role-picker">
+                        <legend>I am signing in as</legend>
+                        <label><input type="radio" name="role" value="student" checked><span><b>Student</b><small>Apply
+                                    and track aid</small></span></label>
+                        <label><input type="radio" name="role" value="faculty"><span><b>Faculty</b><small>Review
+                                    applications</small></span></label>
+                    </fieldset>
+
+                    <label for="email">Email address</label>
+                    <div class="input-wrap"><span aria-hidden="true">@</span><input id="email" name="email" type="email"
+                            autocomplete="email" placeholder="name@school.edu" required></div>
+                    <label for="password">Password</label>
+                    <div class="input-wrap password-wrap"><span aria-hidden="true">●</span><input id="password"
+                            name="password" type="password" autocomplete="current-password"
+                            placeholder="Enter your password" required minlength="4"><button id="password-toggle"
+                            type="button" aria-label="Show password">Show</button></div>
+                    <div class="login-options"><label class="check-label"><input type="checkbox"> Remember
+                            me</label><button class="text-button" type="button">Forgot password?</button></div>
+                    <p id="login-error" class="form-error" role="alert"></p>
+                    <button class="primary-button full" type="submit">Sign in <span aria-hidden="true">→</span></button>
+                    <p class="demo-note">Demo: use any valid email and 4+ character password.</p>
+                </form>
+            </div>
+        </section>
+
+        <section id="app-view" class="app-view hidden" aria-label="ISKOLAR LINK dashboard">
+            <aside id="sidebar" class="sidebar" aria-label="Primary navigation">
+                <div class="sidebar-brand">
+                    <div class="brand-mark"><span>IL</span></div>
+                    <div><strong>ISKOLAR LINK</strong><small>Scholarship Portal</small></div>
+                </div>
+                <nav>
+                    <button class="nav-item active" data-view="dashboard"><span aria-hidden="true">▦</span>
+                        Dashboard</button>
+                    <button class="nav-item" data-view="scholarships"><span aria-hidden="true">◇</span>
+                        Scholarships</button>
+                    <button class="nav-item student-only" data-view="applications"><span aria-hidden="true">▤</span> My
+                        Applications</button>
+                    <button class="nav-item faculty-only hidden" data-view="applications"><span
+                            aria-hidden="true">▤</span> Review Queue</button>
+                    <button class="nav-item" data-view="payouts"><span aria-hidden="true">◷</span> Payout
+                        Schedule</button>
+                    <button class="nav-item" data-view="announcements"><span aria-hidden="true">●</span>
+                        Announcements</button>
+                </nav>
+                <div class="sidebar-profile">
+                    <div class="avatar" id="profile-avatar">JD</div>
+                    <div><strong id="profile-name">Jamie Dela Cruz</strong><small id="profile-role">Student</small>
+                    </div>
+                    <button id="logout-button" class="icon-button" aria-label="Log out" title="Log out">↪</button>
+                </div>
+            </aside>
+
+            <div class="page-shell">
+                <header class="topbar">
+                    <button id="menu-button" class="menu-button" type="button" aria-controls="sidebar"
+                        aria-expanded="false"
+                        aria-label="Open navigation"><span></span><span></span><span></span></button>
+                    <div>
+                        <p class="topbar-greeting" id="topbar-greeting">Good morning, Jamie</p>
+                        <p class="topbar-date" id="topbar-date"></p>
+                    </div>
+                    <div class="topbar-actions"><button id="notification-button" class="icon-button notification"
+                            aria-label="Notifications, 3 unread">♢<span class="notification-dot"></span></button>
+                        <div class="avatar small" id="top-avatar">JD</div>
+                    </div>
+                </header>
+
+                <div class="content">
+                    <section id="dashboard-section" class="view-section">
+                        <div class="page-heading">
+                            <div>
+                                <p class="eyebrow">Overview</p>
+                                <h1 id="dashboard-title">Student Dashboard</h1>
+                            </div><button class="primary-button" data-view="scholarships"><span
+                                    aria-hidden="true">＋</span> Browse Scholarships</button>
+                        </div>
+                        <div id="dashboard-cards" class="dashboard-cards" aria-label="Application summary"></div>
+                        <div class="dashboard-grid">
+                            <article class="panel applications-panel">
+                                <div class="panel-heading">
+                                    <div>
+                                        <p class="eyebrow">Recent activity</p>
+                                        <h2>My Applications</h2>
+                                    </div><button class="text-button" data-view="applications">View all →</button>
+                                </div>
+                                <div id="recent-applications"></div>
+                            </article>
+                            <article class="panel">
+                                <div class="panel-heading">
+                                    <div>
+                                        <p class="eyebrow">Stay informed</p>
+                                        <h2>Latest Announcements</h2>
+                                    </div>
+                                </div>
+                                <div id="dashboard-announcements"></div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="scholarships-section" class="view-section hidden">
+                        <div class="page-heading">
+                            <div>
+                                <p class="eyebrow">Opportunities</p>
+                                <h1>Scholarships</h1>
+                            </div>
+                        </div>
+                        <div class="filter-bar"><label class="search-box"><span aria-hidden="true">⌕</span><span
+                                    class="sr-only">Search scholarships</span><input id="scholarship-search"
+                                    type="search" placeholder="Search scholarships..."></label><label><span
+                                    class="sr-only">Filter by status</span><select id="scholarship-filter">
+                                    <option value="all">All programs</option>
+                                    <option value="open">Open</option>
+                                    <option value="closing">Closing soon</option>
+                                </select></label></div>
+                        <div id="scholarship-grid" class="scholarship-grid"></div>
+                    </section>
+
+                    <section id="applications-section" class="view-section hidden">
+                        <div class="page-heading">
+                            <div>
+                                <p class="eyebrow">Application center</p>
+                                <h1 id="applications-title">My Applications</h1>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div id="application-list"></div>
+                        </div>
+                    </section>
+
+                    <section id="payouts-section" class="view-section hidden">
+                        <div class="page-heading">
+                            <div>
+                                <p class="eyebrow">Financial calendar</p>
+                                <h1>Payout Schedule</h1>
+                            </div>
+                        </div>
+                        <div id="payout-list" class="schedule-list"></div>
+                    </section>
+
+                    <section id="announcements-section" class="view-section hidden">
+                        <div class="page-heading">
+                            <div>
+                                <p class="eyebrow">Campus updates</p>
+                                <h1>Announcements</h1>
+                            </div>
+                        </div>
+                        <div id="announcement-list" class="announcement-list"></div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="scholarship-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-card">
+            <button class="modal-close" type="button" data-close-modal aria-label="Close dialog">×</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
